@@ -8,7 +8,6 @@ export default (schema) => (req, res, next = () => { }) => {
   const body = req['body'] || {}
   const params = req['params'] || {}
   const query = req['query'] || {}
-  const { SERVICE_NAME } = process.env;
 
   const data = {
     headers, body, params, query
@@ -25,7 +24,7 @@ export default (schema) => (req, res, next = () => { }) => {
       fields.push(error);
     });
 
-    const validationError = getError(req, `${SERVICE_NAME}/validation`, fields);
+    const validationError = getError(req, `${process.env.SERVICE_NAME}/validation`, fields);
     return res.status(validationError.status).json(validationError);
   }
   return next();

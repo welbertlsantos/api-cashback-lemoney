@@ -1,17 +1,21 @@
 import express from 'express';
-import validateSchema from '../middlewares/schema-validator.js';
-import createOrderSchema from '../schemas/create-order.js';
-import publishVoucherPubSubSchema from '../schemas/publish-voucher-pubsub.js';
-import orderGetSchema from '../schemas/orderGet.js';
-import { saveOrder, getOrder } from '../controllers/order-controller.js';
-import { publishVoucherPubSub } from '../controllers/voucher-controller.js'
-import tokenValidator from '../middlewares/token-validator.js';
-import requestId from '../middlewares/request-id.js'
+import createProgramSchema from '../schemas/createProgram.js';
+import updateProgramSchema from '../schemas/updateProgramSchema.js';
+import listAllProgramSchema from '../schemas/listAllProgramSchema.js';
+
+import schemaValidator from '../middlewares/schemaValidator.js';
+import { 
+  createProgram,
+  updateProgram,
+  listAllProgram
+} from '../controllers/programController.js'
 
 export default () => {
   const router = express.Router();
-  router.post('/', requestId, tokenValidator(), validateSchema(createOrderSchema), saveOrder);
-  router.put('/', requestId, tokenValidator(), validateSchema(publishVoucherPubSubSchema), publishVoucherPubSub);
-  router.get('/:orderId', requestId, tokenValidator(), validateSchema(orderGetSchema), getOrder);
+  router.post('/', schemaValidator(createProgramSchema), createProgram);
+  router.put('/', schemaValidator(updateProgramSchema), updateProgram);
+  router.get('/:idUsuario', schemaValidator(listAllProgramSchema), listAllProgram);
+  router.get('/program/:idProgram', schemaValidator(listAllProgramSchema), listAllProgram);
+  router.patch('/')
   return router;
 };
