@@ -1,4 +1,5 @@
 import { log, getError } from '../utils/utils.js'
+import programService from '../services/programService.js';
 
 const createProgram = (req, res) => {
   try {
@@ -20,7 +21,7 @@ const updateProgram = (req, res) => {
   }
 };
 
-const deleteProgram = (req, res) => {
+const updateStatusProgram = (req, res) => {
   try {
     
   } catch (error) {
@@ -40,7 +41,7 @@ const listAllProgram = (req, res) => {
   }
 }
 
-const listProgram = (req, res) => {
+const listCashBack = (req, res) => {
   try {
     
   } catch (error) {
@@ -54,10 +55,7 @@ const listProgram = (req, res) => {
 export default {
     createProgram,
     updateProgram,
-    deleteProgram,
+    updateStatusProgram,
     listAllProgram,
-    listProgram,
     listCashBack,
-
-
 }
