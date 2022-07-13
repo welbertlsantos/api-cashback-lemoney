@@ -1,0 +1,19 @@
+{
+  "name": "api-cashback-lemoney",
+  "version": "1.0.0",
+  "description": "api cashback-lemoney",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/welbertlsantos/api-cashback-lemoney.git"
+  },
+  "author": "welbert santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/welbertlsantos/api-cashback-lemoney/issues"
+  },
+  "homepage": "https://github.com/welbertlsantos/api-cashback-lemoney#readme"
+}
