@@ -17,11 +17,15 @@
   },
   "homepage": "https://github.com/welbertlsantos/api-cashback-lemoney#readme",
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "eslint": "^8.19.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0"
   },
   "dependencies": {
-    "express": "^4.18.1"
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "jsonschema": "^1.4.1",
+    "uuid": "^8.3.2"
   }
 }
