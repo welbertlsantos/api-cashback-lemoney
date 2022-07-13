@@ -11,7 +11,7 @@ const getApp = () => {
     app.use(express.urlencoded({ extended: true }));
     
     app.use(`${process.env.CONS_APP_PATH}/health`);
-    app.use(`${process.env.CONS_APP_PATH}/program`);
+    app.use(`${process.env.CONS_APP_PATH}/program-cashback`);
 
     app.use(`${process.env.CONS_APP_PATH}`, router);
 

@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
-
 const getTimestamp = () => new Date(new Date().toUTCString());
 
 const checkViewcodKeys = (error) => {
@@ -45,8 +43,8 @@ const checkViewcodKeys = (error) => {
   };
 
   const getError = (req, errorCode, fields) => {
-    const viecoError = checkViewcodKeys(errorCode || {});
-    if (viecoError) return errorCode;
+    const codError = checkViewcodKeys(errorCode || {});
+    if (codError) return errorCode;
   
     const keys = Object.keys(errors);
     let code = `${process.env.SERVICE_NAME}/internal-server-error`;
@@ -60,13 +58,12 @@ const checkViewcodKeys = (error) => {
     } else {
       code = `${process.env.SERVICE_NAME}/internal-server-error`;
     }
-  
-    const requestId = req?.headers['x-request-id'] || uuidv4();
+
     const timestamp = getTimestamp();
     const e = { ...errors[code] };
     if (!keys.includes(errorCode.message)) e.userMessage = errorCode.message;
   
-    Object.assign(e, { requestId, timestamp });
+    Object.assign(e, { timestamp });
     if (fields) Object.assign(e, { fields });
   
     return e;
