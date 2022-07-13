@@ -1,7 +1,9 @@
 import log from "./log";
-import { getError } from "./error";
+import { getError, generateErrorObject } from "./error";
 
 
 export {
-    log, getError,
+    log, 
+    getError,
+    generateErrorObject
 };

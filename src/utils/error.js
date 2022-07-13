@@ -69,7 +69,15 @@ const checkViewcodKeys = (error) => {
     return e;
   };
 
+  const generateErrorObject = (error) => {
+    const e = new Error(error);
+    e.code = error;
+    e.type = error;
+    return e;
+  };
+
 
   export {
-    getError
+    getError,
+    generateErrorObject
   }

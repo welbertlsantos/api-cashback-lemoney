@@ -19,6 +19,6 @@ export default () => {
   router.put('/', schemaValidator(updateProgramSchema), updateProgram);
   router.get('/:idUsuario', schemaValidator(listAllProgramSchema), listAllProgram);
   router.get('/program/:idProduto', schemaValidator(listAllProgramSchema), listCashBack);
-  router.patch('/program/:idProgram', schemaValidator(listProgramSchema), updateStatusProgram );''
+  router.patch('/program/:idProgram', schemaValidator(listProgramSchema), updateStatusProgram );
   return router;
 };
