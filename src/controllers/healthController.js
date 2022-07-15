@@ -1,4 +1,4 @@
-import { getError } from '../utils/util.js';
+import { getError } from '../utils/utils.js';
 
 export default async (req, res) => {
   try {

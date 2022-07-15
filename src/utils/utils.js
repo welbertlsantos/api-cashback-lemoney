@@ -1,5 +1,5 @@
-import log from "./log";
-import { getError, generateErrorObject } from "./error";
+import log from "./log.js";
+import { getError, generateErrorObject } from "./error.js";
 
 
 export {

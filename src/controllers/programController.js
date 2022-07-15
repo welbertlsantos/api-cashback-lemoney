@@ -2,20 +2,6 @@ import { log, getError } from '../utils/utils.js'
 import programService from '../services/programService.js';
 import programDTO from '../DTO/programDTO.js';
 
-/* metodo interno de validação. Não será exposto */
-const validaProgram = () => {
-  try {
-
-    const result = true;
-    /* inclusão de validação para programas */
-    
-    return result;
-  } catch (error) {
-    log.error('Error', error.message);
-    throw error;
-  }
-};
-
 const createProgram = async (req, res) => {
   try {
 
@@ -85,7 +71,7 @@ const listCashBack = (req, res) => {
   }
 }
 
-export default {
+export {
     createProgram,
     updateProgram,
     updateStatusProgram,

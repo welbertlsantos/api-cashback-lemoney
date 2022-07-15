@@ -1,5 +1,5 @@
 import { Validator } from 'jsonschema';
-import { getError } from '../utils/util.js';
+import { getError } from '../utils/utils.js';
 
 const v = new Validator();
 
