@@ -60,6 +60,7 @@ export default {
         dataFim: {
           type: 'string',
           format: 'date',
+          required: true,
         }
       }
     }

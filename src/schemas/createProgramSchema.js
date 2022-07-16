@@ -50,8 +50,9 @@ export default {
           required: true,
         },
         dataFim: {
-          type: ['string', 'null'],
+          type: 'string',
           format: 'date',
+          required: true,
         }
       }
     }

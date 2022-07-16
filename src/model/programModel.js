@@ -38,10 +38,11 @@ const schemaProgram =  new Schema({
   },
   dataInicio: {
     type: Date,
-    required: [true, 'Program Start Date is required.']
+    required: [true, 'Program Start date is required.']
   },
   dataFim: {
-    type: Date
+    type: Date,
+    required: [true, 'Program end date is required.']
   },
 });
 
