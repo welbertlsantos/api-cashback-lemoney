@@ -1,21 +1,16 @@
 import { log } from '../utils/utils.js'
+import ProgramModel from '../model/programModel.js'
 
 export default () => {
 
   const createProgram = async (program) => {
     try {
-      
-
-        
-
-      
-      
-      
+      const newProgram = await ProgramModel.create(program);
+      return newProgram;
     } catch (error) {
       log.error('Error', error.message);
       throw error;
     }
-
   };
 
   const updateProgram = async (program) => {
@@ -47,9 +42,12 @@ export default () => {
     }
   };
 
-  const listCashBack = async (idProduto) => {
+  const listCashBack = async (produto) => {
     try {
-      
+      const cashback = await ProgramModel.
+        find({ idProduto: produto}).
+        where({ status: 'Ativo'})
+      return cashback;
     } catch (error) {
       log.error('Error', error.message);
       throw error;

@@ -32,6 +32,10 @@ const schemaProgram =  new Schema({
   valorCashBackPercentual: {
     type: Number,
   },
+  status: {
+    type: String,
+    required: true
+  },
   dataInicio: {
     type: Date,
     required: [true, 'Program Start Date is required.']

@@ -9,10 +9,11 @@ const createProgram = async (req, res) => {
         ativo ainda. Caso contrário, será levantado um erro. */
     
     const { idProduto } = req.body;
-    const programFind = programService().listCashBack(idProduto);
+    const programFind = await programService().listCashBack(idProduto);
 
-    if (programFind)  {
+    if (programFind.length)  {
       /* incluindo validações para criação do novo programa de cashBack */
+      log.info('Produto encontrado');
     }
 
     const newProgram = await programService().createProgram(programDTO(req.body));

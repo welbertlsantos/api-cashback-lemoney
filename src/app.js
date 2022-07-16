@@ -17,10 +17,8 @@ const getApp = async () => {
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
     
-    app.use(`${process.env.CONS_APP_PATH}/health`, healthRouter());
-    app.use(`${process.env.CONS_APP_PATH}/program-cashback`, programRouter());
-
-    app.use(`${process.env.CONS_APP_PATH}`, router);
+    app.use('/health', healthRouter());
+    app.use('/program-cashback', programRouter());
 
     return app;
 

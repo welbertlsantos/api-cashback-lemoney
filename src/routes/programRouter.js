@@ -15,7 +15,7 @@ import {
 
 export default () => {
   const router = express.Router();
-  router.post('/', schemaValidator(createProgramSchema), createProgram);
+  router.post('', schemaValidator(createProgramSchema), createProgram);
   router.put('/', schemaValidator(updateProgramSchema), updateProgram);
   router.get('/:idUsuario', schemaValidator(listAllProgramSchema), listAllProgram);
   router.get('/program/:idProduto', schemaValidator(listAllProgramSchema), listCashBack);

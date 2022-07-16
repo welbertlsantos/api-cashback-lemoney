@@ -1,7 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
-
 export default (body) => ({
-  idProgram : uuidv4(),
   idUsuario: body.idUsuario,
   idProduto: body.idProduto,
   descricaoProduto: body.descricaoProduto,
