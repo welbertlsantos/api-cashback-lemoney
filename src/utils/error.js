@@ -40,6 +40,27 @@ const checkViewcodKeys = (error) => {
       detail: 'Parâmetros incorretos.',
       userMessage: 'Parâmetros incorretos.',
     },
+    'ms-program-cashback/create-program': {
+      status: 400,
+      type: 'erro-de-inclusao',
+      title: 'Requisição inválida.',
+      detail: 'Parâmetros incorretos.',
+      userMessage: 'Não é permito a inclusão do programa com outro ativo para o mesmo periodo.',
+    },
+    'ms-program-cashback/update-program': {
+      status: 400,
+      type: 'erro-de-alteracao',
+      title: 'Requisição inválida.',
+      detail: 'Parâmetros incorretos.',
+      userMessage: 'Não é permito a alteração do programa com outro ativo para o mesmo periodo.',
+    },
+    'ms-program-cashback/cash-program': {
+      status: 400,
+      type: 'erro-de-pesquisa',
+      title: 'Requisição inválida.',
+      detail: 'Parâmetros incorretos.',
+      userMessage: 'Não existe cashBack ativo para a data atual.',
+    },
   };
 
   const getError = (req, errorCode, fields) => {

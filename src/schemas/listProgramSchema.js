@@ -7,13 +7,11 @@ export default {
       required: true,
       additionalProperties: false,
       properties: {
-        idProgram: {
+        id: {
           type: 'string',
           required: true,
-          pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$',
-          format: 'uuid',
-          minLength: 36,
-          maxLength: 36
+          minLength: 24,
+          maxLength: 24,
         },
       }
     }

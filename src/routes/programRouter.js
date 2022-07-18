@@ -3,6 +3,7 @@ import createProgramSchema from '../schemas/createProgramSchema.js';
 import updateProgramSchema from '../schemas/updateProgramSchema.js';
 import listAllProgramSchema from '../schemas/listAllProgramSchema.js';
 import listProgramSchema from '../schemas/listProgramSchema.js';
+import cashBackSchema from '../schemas/cashBackSchema.js';
 
 import schemaValidator from '../middlewares/schemaValidator.js';
 import { 
@@ -16,9 +17,10 @@ import {
 export default () => {
   const router = express.Router();
   router.post('', schemaValidator(createProgramSchema), createProgram);
-  router.put('/', schemaValidator(updateProgramSchema), updateProgram);
+  router.put('/:id', schemaValidator(updateProgramSchema), updateProgram);
+  router.patch('/:id', schemaValidator(listProgramSchema), updateStatusProgram );
   router.get('/:idUsuario', schemaValidator(listAllProgramSchema), listAllProgram);
-  router.get('/program/:idProduto', schemaValidator(listAllProgramSchema), listCashBack);
-  router.patch('/program/:idProgram', schemaValidator(listProgramSchema), updateStatusProgram );
+  router.get('', schemaValidator(cashBackSchema), listCashBack);
+
   return router;
 };

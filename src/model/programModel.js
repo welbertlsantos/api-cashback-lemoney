@@ -4,18 +4,18 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
 const schemaProgram =  new Schema({
-  idProgram: ObjectId,
+  id: ObjectId,
   idUsuario: {
     type: String,
     required: [ true, 'User identifier is required.']
   },
   idProduto: {
     type: String,
-    required: [ true, 'Product identifier is required' ]
+    required: [ true, 'Product identifier is required']
   },
   descricaoProduto: {
     type: String,
-    required: [ true, 'Product description is required.']
+    required: [ true, 'Product description is required']
   },
   valorProduto: {
     type: Number,
@@ -27,7 +27,7 @@ const schemaProgram =  new Schema({
     enum: [ 'P', 'V'],
   },
   valorCashBackMoeda: {
-    type: Number
+    type: Number,
   },
   valorCashBackPercentual: {
     type: Number,
