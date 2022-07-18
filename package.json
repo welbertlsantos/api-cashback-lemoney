@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node index.js",
-		"start-dev": "env-cmd -f ./.env-dev nodemon index.js"
+    "start-dev": "env-cmd -f ./.env-dev nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -20,10 +20,14 @@
   },
   "homepage": "https://github.com/welbertlsantos/api-cashback-lemoney#readme",
   "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "babel-jest": "^28.1.3",
     "env-cmd": "^10.1.0",
     "eslint": "^8.19.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
+    "jest": "^28.1.3",
     "nodemon": "^2.0.19"
   },
   "dependencies": {
