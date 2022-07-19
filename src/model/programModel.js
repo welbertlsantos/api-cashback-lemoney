@@ -6,7 +6,8 @@ const ObjectId = Schema.ObjectId;
 const schemaProgram =  new Schema({
   id: ObjectId,
   idUsuario: {
-    type: String,
+    type: ObjectId,
+    ref: 'User',
     required: [ true, 'User identifier is required.']
   },
   idProduto: {

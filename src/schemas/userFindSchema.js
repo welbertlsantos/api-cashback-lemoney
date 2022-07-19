@@ -1,19 +1,23 @@
 export default {
-  id: 'list-all-program',
+  id: 'create-user',
   type: 'object',
   properties: {
+    headers: {
+      type: 'object',
+      required: false,
+    },
     params: {
       type: 'object',
       required: true,
       additionalProperties: false,
       properties: {
-        idUsuario: {
+        id: {
           type: 'string',
-          required: true,
           minLength: 24,
-          maxLength: 24
-        },
+          maxLength: 24,
+          required: true,
+        }
       }
     }
   },
-};
+}

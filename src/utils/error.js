@@ -61,6 +61,23 @@ const checkViewcodKeys = (error) => {
       detail: 'Parâmetros incorretos.',
       userMessage: 'Não existe cashBack ativo para a data atual.',
     },
+    'ms-program-cashback/invalid-token': {
+      status: 400,
+      type: 'erro-de-token',
+      title: 'Requisição inválida.',
+      detail: 'Parâmetros incorretos.',
+      userMessage: 'Token inválido',
+    },
+    'ms-program-cashback/invalid-user': {
+      status: 400,
+      type: 'erro-de-usuario',
+      title: 'Requisição inválida.',
+      detail: 'Parâmetros incorretos.',
+      userMessage: 'Usuario inválido',
+    },
+
+
+
   };
 
   const getError = (req, errorCode, fields) => {

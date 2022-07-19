@@ -4,11 +4,11 @@ import mongoose from "mongoose";
 
 import healthRouter from '../src/routes/healthRouter.js';
 import programRouter from '../src/routes/programRouter.js'
+import userRouter from '../src/routes/userRouter.js'
 
 const getApp = async () => {
 
     const app = express();
-    const router = express.Router();
 
     /* iniciando a conexão com a base de dados */
     await mongoose.connect(process.env.CONS_CONEXAO);
@@ -19,6 +19,7 @@ const getApp = async () => {
     
     app.use('/health', healthRouter());
     app.use('/program-cashback', programRouter());
+    app.use('/user', userRouter());
 
     return app;
 

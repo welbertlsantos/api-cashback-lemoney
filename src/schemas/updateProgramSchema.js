@@ -1,5 +1,3 @@
-import { stringify } from "uuid";
-
 export default {
   id: 'update-program',
   type: 'object',
@@ -26,10 +24,8 @@ export default {
         idUsuario: {
           type: 'string',
           required: true,
-          pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$',
-          format: 'uuid',
-          minLength: 36,
-          maxLength: 36
+          minLength: 24,
+          maxLength: 24
         },
         idProduto: {
           type: 'string',
