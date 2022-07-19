@@ -23,7 +23,7 @@ const authenticate = async (req, res) => {
       email: userFound.email
     });
 
-    res.status(200).send({ token: token, user: { email: userFound.email} });
+    res.status(200).send({ token: token, user: { email: userFound.email, id: userFound._id} });
   } catch (error) {
     log.error('Error: ', error.message);
     const e = getError(req, error);

@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest --coverage --verbose true --detectOpenHandles",
-    "start": "node index.js",
+    "start": "env-cmd -f ./.env-dev node index.js",
     "start-dev": "env-cmd -f ./.env-dev nodemon index.js"
   },
   "repository": {

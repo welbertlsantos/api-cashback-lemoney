@@ -59,7 +59,7 @@ const updateStatusProgram = async (req, res) => {
   try {
     const { id } = req.params;
     await programService().updateStatusProgram(id);
-    res.status(200).send('program disabled successfully!');
+    res.status(200).send({ Message: 'program disabled successfully!'});
   } catch (error) {
     log.error('Error: ', error.message);
     const e = getError(req, error);
@@ -98,12 +98,26 @@ const listCashBack = async (req, res) => {
     
     let valorCashBack = 0;
     if (cashBackSelecionado.tipoCashBack === 'P') {
-      valorCashBack = Number((cashBackSelecionado.valorCashBackPercentual / 100 ) * valorPedido);
+      valorCashBack = Number((cas-hBackSelecionado.valorCashBackPercentual / 100 ) * valorPedido);
 
     } else {
       valorCashBack = Number((valorPedido / cashBackSelecionado.valorProduto) * cashBackSelecionado.valorCashBackMoeda );
     }
     res.status(200).send({cashBack: valorCashBack.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})});
+  } catch (error) {
+    log.error('Error: ', error.message);
+    const e = getError(req, error);
+    return res.status(e.status).json(e);
+  }
+}
+
+const findProgramById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const programFind = await programService().findById(id);
+    if (!programFind)
+      throw generateErrorObject(`${process.env.SERVICE_NAME}/invalid-program`);
+    res.status(200).send(programFind);
   } catch (error) {
     log.error('Error: ', error.message);
     const e = getError(req, error);
@@ -117,4 +131,5 @@ export {
     updateStatusProgram,
     listAllProgram,
     listCashBack,
+    findProgramById,
 }

@@ -75,9 +75,13 @@ const checkViewcodKeys = (error) => {
       detail: 'Parâmetros incorretos.',
       userMessage: 'Usuario inválido',
     },
-
-
-
+    'ms-program-cashback/invalid-program': {
+      status: 400,
+      type: 'erro-de-usuario',
+      title: 'Requisição inválida.',
+      detail: 'Parâmetros incorretos.',
+      userMessage: 'Programa de CashBack inválido',
+    },
   };
 
   const getError = (req, errorCode, fields) => {

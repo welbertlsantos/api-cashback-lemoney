@@ -13,7 +13,8 @@ import {
   updateProgram,
   listAllProgram,
   listCashBack,
-  updateStatusProgram
+  updateStatusProgram,
+  findProgramById
 } from '../controllers/programController.js'
 
 export default () => {
@@ -22,6 +23,7 @@ export default () => {
   router.put('/:id', validateToken(), schemaValidator(updateProgramSchema), updateProgram);
   router.patch('/:id', validateToken(), schemaValidator(listProgramSchema), updateStatusProgram );
   router.get('/:idUsuario', validateToken(), schemaValidator(listAllProgramSchema), listAllProgram);
+  router.get('/program/:id', validateToken(), schemaValidator(listProgramSchema), findProgramById);
   router.get('', validateToken(), schemaValidator(cashBackSchema), listCashBack);
 
   return router;
